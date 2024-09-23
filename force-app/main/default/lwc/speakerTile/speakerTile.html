@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Speaker Details">
+      <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_small">
+        <lightning-icon icon-name="standard:user" alternative-text={speakerName} size="large"></lightning-icon>
+        <div class="slds-m-left_small">
+          <div class="slds-text-title_bold">{speakerName}</div>
+          <div class="slds-grid slds-grid_vertical-align-center">
+            <lightning-icon icon-name="standard:email" alternative-text="Email" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+            <span>{speakerEmail}</span>
+          </div>
+          <div>{speakerPhone}</div> 
+        </div>
+      </div>
+    </lightning-card>  
+</template>

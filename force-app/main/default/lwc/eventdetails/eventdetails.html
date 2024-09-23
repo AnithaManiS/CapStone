@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Event Details">
+      <div class="slds-m-around_medium">
+
+        <lightning-tabset variant="scoped">
+          
+          <lightning-tab label="Event Details" id="eventDetailsTab">
+            <div class="slds-m-around_medium">
+              <p><strong>Event Name:</strong> {eventName}</p>
+              <p><strong>Start Date:</strong> {eventStartDateTime}</p>
+              <p><strong>End Date:</strong> { eventEndDateTime}</p>
+            </div>
+          </lightning-tab>
+
+          <lightning-tab label="Speaker Details" id="speakersTab">
+            <div class="slds-m-around_medium">
+              <template lwc:if={speaker}>
+                  <lightning-datatable  key-field="Id" data={speaker} columns={speakerColumns}> </lightning-datatable>
+              </template>
+              <template lwc:else>
+                <lightning-button variant="brand" label="New Speaker" onclick={handleNewSpeaker}></lightning-button>
+              </template>
+            </div>
+          </lightning-tab>
+
+          <lightning-tab label="Location Details" id="locationTab">
+            <div class="slds-m-around_medium">
+                <template lwc:if={location}>
+                  <lightning-datatable  key-field="Id" data={location} columns={locationColumns}> </lightning-datatable>
+              </template>
+            </div>
+          </lightning-tab>
+
+          <lightning-tab label="Attendees Details" id="attendeeTab">
+            <div class="slds-m-around_medium">
+              <template lwc:if={attendees}>
+                <lightning-datatable  key-field="Id" data={attendees} columns={attendeeColumns}> </lightning-datatable>
+              </template>
+            </div>
+            <div class="slds-m-around_medium">
+              <lightning-button variant="brand" label="New Attendee" onclick={handleNewAttendee}></lightning-button>
+            </div>
+          </lightning-tab>
+  
+        </lightning-tabset>
+      </div>
+  </lightning-card>
+</template>

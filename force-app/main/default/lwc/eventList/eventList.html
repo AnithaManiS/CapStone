@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Live Events" icon-name="standard:record">
+        
+        <div class="slds-var-m-around_small">
+            <lightning-datatable
+                key-field="id"
+                data={events}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={openEventDetails}>
+            </lightning-datatable>
+        </div>
+
+        <div class="slds-p-around_small">
+            <lightning-input type="text" label="Event Name" name="eventName" value={searchName} onchange={handleSearchNameChange}></lightning-input>
+            <lightning-input type="date" label="Start Date" name="eventDate" value={searchStartDate} onchange={handleSearchStartDateChange}></lightning-input>
+            <lightning-input type="text" label="Location" name="eventLocation" value={searchLocation} onchange={handleSearchLocationChange}></lightning-input>
+            <button class="slds-m-top_small" onclick={handleSearch}>Search</button>
+        </div>
+        
+    </lightning-card> 
+    
+</template>

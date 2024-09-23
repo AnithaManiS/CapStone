@@ -1,0 +1,9 @@
+<template>
+<lightning-card title="Create New Event">
+  <div class="slds-var-p-around_small">
+        <lightning-record-form 
+        onsuccess= {handleSuccessOnCreate}
+        object-api-name={objectApiName} fields={myFields}></lightning-record-form>
+    </div>
+</lightning-card>
+</template>
